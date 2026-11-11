@@ -5,12 +5,15 @@
 
 #rr-widget {
   font-family:Montserrat,sans-serif;
-  color:#fff;
+  color:#2cefac;
   width:100%;
   max-width:850px;
   margin:auto;
 }
-#rr-widget * {box-sizing:border-box}
+
+#rr-widget * {
+  box-sizing:border-box;
+}
 
 #rr-widget .panel {
   background:transparent;
@@ -33,6 +36,7 @@
   font-size:17px;
   font-weight:900;
   letter-spacing:2px;
+  color:#2cefac;
 }
 
 #rr-widget .nick {
@@ -48,7 +52,7 @@
 
 #rr-widget .live {
   font-size:10px;
-  color:#69dc91;
+  color:#2cefac;
   font-weight:800;
   white-space:nowrap;
 }
@@ -69,13 +73,14 @@
 }
 
 #rr-widget .label {
-  color:#aab5c3;
+  color:#2cefac;
   font-size:10px;
   font-weight:800;
   letter-spacing:1.3px;
 }
 
 #rr-widget .number {
+  color:#2cefac;
   font-size:clamp(21px,4vw,34px);
   font-weight:900;
   margin-top:9px;
@@ -83,23 +88,39 @@
   overflow:hidden;
 }
 
-#rr-widget .gold {color:#2cefac}
+#rr-widget .gold {
+  color:#2cefac;
+}
 
 #rr-widget .footer {
   display:flex;
   justify-content:space-between;
   margin-top:14px;
-  color:#8793a3;
+  color:#2cefac;
   font-size:9px;
   gap:8px;
 }
 
 @media(max-width:480px) {
-  #rr-widget .panel {padding:13px}
-  #rr-widget .stats {gap:6px}
-  #rr-widget .stat {padding:13px 4px}
-  #rr-widget .label {font-size:8px}
-  #rr-widget .nick {font-size:17px}
+  #rr-widget .panel {
+    padding:13px;
+  }
+
+  #rr-widget .stats {
+    gap:6px;
+  }
+
+  #rr-widget .stat {
+    padding:13px 4px;
+  }
+
+  #rr-widget .label {
+    font-size:8px;
+  }
+
+  #rr-widget .nick {
+    font-size:17px;
+  }
 }
 </style>
 
@@ -284,7 +305,7 @@
       }
 
       $("rr-name").textContent =
-        pilot.fullname || "Nombre no disponible";
+        pilot.fullname || pilot.name || "Nombre no disponible";
 
       $("rr-rating").textContent =
         pilot.rating.toLocaleString("es-ES");
